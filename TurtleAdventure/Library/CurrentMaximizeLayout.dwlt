@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 720
-  m_MinSize: {x: 583, y: 471}
+  m_MinSize: {x: 581, y: 450}
   m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 1105
+  controlID: 50
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -50,25 +50,26 @@ MonoBehaviour:
     y: 94
     width: 578
     height: 428
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 07000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 06000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -320
-    m_HBaseRangeMax: 320
-    m_VBaseRangeMin: -240
-    m_VBaseRangeMax: 240
+    m_HBaseRangeMin: -512
+    m_HBaseRangeMax: 512
+    m_VBaseRangeMin: -384
+    m_VBaseRangeMax: 384
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
+    m_HSlider: 1
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoom: 0
@@ -80,7 +81,7 @@ MonoBehaviour:
       y: 17
       width: 578
       height: 411
-    m_Scale: {x: 0.85625, y: 0.85625}
+    m_Scale: {x: 2, y: 2}
     m_Translation: {x: 289, y: 205.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -88,12 +89,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -337.51825
-      y: -240
-      width: 675.0365
-      height: 480
+      x: -144.5
+      y: -102.75
+      width: 289
+      height: 205.5
     m_MinimalGUI: 1
-  m_defaultScale: 0.85625
+  m_defaultScale: 0.53515625
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 578, y: 428}
@@ -120,10 +121,10 @@ MonoBehaviour:
     y: 0
     width: 934
     height: 720
-  m_MinSize: {x: 306, y: 471}
+  m_MinSize: {x: 304, y: 450}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 1106
+  controlID: 51
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,10 +145,10 @@ MonoBehaviour:
     y: 0
     width: 934
     height: 449
-  m_MinSize: {x: 306, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 304, y: 200}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 1062
+  controlID: 52
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,8 +167,8 @@ MonoBehaviour:
     y: 0
     width: 352
     height: 449
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -199,11 +200,12 @@ MonoBehaviour:
     y: 94
     width: 350
     height: 428
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 4afbffff00000000
+    m_ExpandedIDs: 50faffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -279,15 +281,16 @@ MonoBehaviour:
     y: 94
     width: 578
     height: 428
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
   lastFramingTime: 221.6610249876976
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.4746693, y: 0.65794885, z: 0.37370145}
+    m_Target: {x: -3.8242652, y: 1.0148951, z: 0.33671746}
     speed: 2
-    m_Value: {x: -0.4746693, y: 0.65794885, z: 0.37370145}
+    m_Value: {x: -3.8242652, y: 1.0148951, z: 0.33671746}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -296,6 +299,7 @@ MonoBehaviour:
     showSkybox: 1
     showFlares: 1
     showImageEffects: 1
+    showParticleSystems: 1
   grid:
     xGrid:
       m_Target: 0
@@ -314,9 +318,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.3421545
+    m_Target: 11.049681
     speed: 2
-    m_Value: 7.3421545
+    m_Value: 11.049681
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -354,7 +358,8 @@ MonoBehaviour:
     y: 109
     width: 563
     height: 467
-  m_ViewPositions:
+  m_PersistentViewDataDictionary: {fileID: 0}
+  m_ViewTransforms:
     m_KeySerializationHelper: []
     m_ValueSerializationHelper: []
   m_PreviewAnimator: {fileID: 0}
@@ -422,6 +427,7 @@ MonoBehaviour:
     y: 543
     width: 932
     height: 250
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -440,13 +446,13 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/johanliewendahl/UnityProjekt/TurtleAdventure/TurtleAdventure
+  m_LastProjectPath: /Users/ebba/Documents/Projects/TurtleAdventure/TurtleAdventure
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c270000
-    m_LastClickedID: 9996
-    m_ExpandedIDs: 000000000c27000000ca9a3bffffff7f
+    m_SelectedIDs: 20290000
+    m_LastClickedID: 10528
+    m_ExpandedIDs: 000000002029000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -474,7 +480,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000c27000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000020290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -555,6 +561,7 @@ MonoBehaviour:
     y: 729
     width: 1169
     height: 325
+  m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -607,6 +614,7 @@ MonoBehaviour:
     y: 94
     width: 504
     height: 699
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
@@ -639,6 +647,7 @@ MonoBehaviour:
     y: 116
     width: 633
     height: 938
+  m_PersistentViewDataDictionary: {fileID: 0}
   m_InitialOpenURL: https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_GlobalObjectTypeName: 
   m_RegisteredViewURLs:
