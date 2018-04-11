@@ -1,0 +1,23 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class feetCollisionCheck : MonoBehaviour {
+
+	TurtleControls bobby;
+
+	// Use this for initialization
+	void Start () {
+		bobby = transform.parent.gameObject.GetComponent<TurtleControls> ();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		bobby.JumpCount = 0;
+	}
+}
