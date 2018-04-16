@@ -15,7 +15,11 @@ public class TurtleControls : MonoBehaviour {
 	public int LivesMaximum; //How many lives can you have maximum
 	public int lives; //How many lives do you have
 
+	public bool grounded;
+
 	public UIScript uiScript; //User Interface controll
+
+	Vector3 lastSavedPosition;
 
 	Rigidbody2D rb;
 	Transform mageTransform;
@@ -29,9 +33,14 @@ public class TurtleControls : MonoBehaviour {
 
 		lives = LivesMaximum;
 
+		lastSavedPosition = transform.position;
+
+		grounded = false;
+
 		rb = GetComponent<Rigidbody2D> ();
 		mageTransform = transform.Find ("mage");
-		animator = mageTransform.gameObject.GetComponent<Animator> ();
+
+		animator = GetComponent<Animator> ();
 
 		uiScript.SetLifeSigns (lives);
 
@@ -41,18 +50,35 @@ public class TurtleControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		Collider2D[] contactcolliders = new Collider2D[5];
+		int contactcolliderSize = feetCollider.GetContacts (contactcolliders);
+		grounded = false;
+		animator.SetBool ("grounded", false);
+		for (int i = 0; i < contactcolliderSize; i++) {
+			//Check if is grounded
+			if (contactcolliders[i].gameObject.tag == "ground") {
+				JumpCount = 0;
+				grounded = true;
+				animator.SetBool ("grounded", true);
+				break;
+			}
+		}
+
+
+
+
 		//First set animation-state to idle
 		animator.SetBool ("walking", false);
 
 		if ( Input.GetKey ("d") || Input.GetKey ("right")) {
 			transform.position += new Vector3 (SpeedX * Time.deltaTime, 0, 0);
-			mageTransform.localScale = new Vector3 (1,1,1);
+			transform.localScale = new Vector3 (1,1,1);
 			animator.SetBool ("walking", true); //Overwrite animation-state with walking
 		}
 
 	    if	( Input.GetKey ("a") || Input.GetKey ("left")) {
 			transform.position += new Vector3 (-SpeedX * Time.deltaTime,0,0);
-			mageTransform.localScale = new Vector3 (-1,1,1);
+			transform.localScale = new Vector3 (-1,1,1);
 			animator.SetBool ("walking", true);
 		}
 
@@ -63,6 +89,7 @@ public class TurtleControls : MonoBehaviour {
 				JumpCount++;
 				rb.velocity = new Vector2 (rb.velocity.x, 0);
 				rb.AddForce (new Vector2 (0, JumpForce));
+				animator.SetTrigger("JumpStart");
 			}
 		}
 			
@@ -75,22 +102,48 @@ public class TurtleControls : MonoBehaviour {
 			lives--;
 			uiScript.DeleteALifeSign ();
 
-			print ("Ouch!!"+ lives + " lives to go.");
+			animator.SetTrigger ("hurt");
 
-			if(mageTransform.localScale.x > 0)
-				rb.AddForce (new Vector2(-deathPushbackForce, deathPushbackForce*2));
-			else
-				rb.AddForce (new Vector2(deathPushbackForce, deathPushbackForce*2));
+			print ("Ouch!!"+ lives + " lives to go.");
 
 			if (lives <= 0) {
 				//No more lives means death
-				Die();
+				StartCoroutine("Kill");
+			} else {
+
+				if (mageTransform.localScale.x > 0)
+					rb.AddForce (new Vector2 (-deathPushbackForce, deathPushbackForce * 2));
+				else
+					rb.AddForce (new Vector2 (deathPushbackForce, deathPushbackForce * 2));
 			}
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.gameObject.tag == "savepoint")
+		{
+			print ("Saving");
+			lastSavedPosition = other.gameObject.transform.position + new Vector3(0,0.5f,0);
+		}
+	}
+
+	IEnumerator Kill()
+	{
+		for (int i = 0; i < 2; i++) {
+			if (i >= 1) {
+				Die ();
+			}
+			yield return new WaitForSeconds (0.5f);
 		}
 	}
 
 	void Die()
 	{
-		SceneManager.LoadScene("main", LoadSceneMode.Single);
+		//SceneManager.LoadScene("main", LoadSceneMode.Single);
+		transform.position = lastSavedPosition;
+		rb.velocity = new Vector2(0,0);
+		lives = LivesMaximum;
+		uiScript.SetLifeSigns (lives);
 	}
 }

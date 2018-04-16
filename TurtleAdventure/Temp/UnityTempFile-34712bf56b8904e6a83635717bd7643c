@@ -181,6 +181,7 @@
 -define:UNITY_PRO_LICENSE
 'Assets/Scripts/feetCollisionCheck.cs'
 'Assets/Scripts/FrogAI.cs'
+'Assets/Scripts/SavePoint.cs'
 'Assets/Scripts/TurtleControls.cs'
 'Assets/Scripts/UIScript.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'

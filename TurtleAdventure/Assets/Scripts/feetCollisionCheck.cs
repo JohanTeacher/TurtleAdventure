@@ -16,8 +16,18 @@ public class feetCollisionCheck : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	/*void OnTriggerEnter2D(Collider2D other)
 	{
-		bobby.JumpCount = 0;
+		if (other.gameObject.tag == "ground") {
+			bobby.JumpCount = 0;
+			bobby.grounded = true;
+		}
 	}
+		
+	void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "ground") {
+			bobby.grounded = false;
+		}
+	}*/
 }

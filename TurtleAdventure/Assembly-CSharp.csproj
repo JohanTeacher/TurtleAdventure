@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\feetCollisionCheck.cs" />
      <Compile Include="Assets\Scripts\FrogAI.cs" />
+     <Compile Include="Assets\Scripts\SavePoint.cs" />
      <Compile Include="Assets\Scripts\TurtleControls.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />
  <Reference Include="UnityEngine.UI">
