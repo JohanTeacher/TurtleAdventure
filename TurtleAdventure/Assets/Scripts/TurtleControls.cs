@@ -11,6 +11,7 @@ public class TurtleControls : MonoBehaviour {
 	public int MaximumJumps; //How many jumps can you make
 	public int JumpCount; //How many jumps have you made
 	public float deathPushbackForce; //When you get hurt, how far do you get pushed back
+	public float killHeight; //Y Position lower than this results in death
 
 	public int LivesMaximum; //How many lives can you have maximum
 	public int lives; //How many lives do you have
@@ -63,9 +64,7 @@ public class TurtleControls : MonoBehaviour {
 				break;
 			}
 		}
-
-
-
+			
 
 		//First set animation-state to idle
 		animator.SetBool ("walking", false);
@@ -91,6 +90,12 @@ public class TurtleControls : MonoBehaviour {
 				rb.AddForce (new Vector2 (0, JumpForce));
 				animator.SetTrigger("JumpStart");
 			}
+		}
+
+
+		//Check Y position to see if Bobby dies
+		if (transform.position.y <= killHeight) {
+			Die ();
 		}
 			
 
@@ -143,7 +148,12 @@ public class TurtleControls : MonoBehaviour {
 		//SceneManager.LoadScene("main", LoadSceneMode.Single);
 		transform.position = lastSavedPosition;
 		rb.velocity = new Vector2(0,0);
+		for (int i = 0; i < lives; i++) {
+			uiScript.DeleteALifeSign ();
+		}
 		lives = LivesMaximum;
 		uiScript.SetLifeSigns (lives);
+		print ("Died!!!");
+
 	}
 }
