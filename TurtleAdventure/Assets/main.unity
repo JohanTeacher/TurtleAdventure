@@ -356,8 +356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angularVelocity: 500
-  movementSpeed: 0.2
-  target: {fileID: 2046942914}
+  movementSpeed: 0.6
+  playerTransform: {fileID: 2046942914}
 --- !u!212 &119737637
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 119737633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6589928, y: -0.05595605, z: 9.822697}
+  m_LocalPosition: {x: -1.6589928, y: -0.05595605, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1204782557}
@@ -2036,7 +2036,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.6176586, y: 0.005118847}
+  m_Offset: {x: -1.1505136, y: 0.005118847}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2047,7 +2047,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5357523, y: 1.788352}
+  m_Size: {x: 5.385334, y: 1.788352}
   m_EdgeRadius: 0
 --- !u!4 &1204782557
 Transform:
@@ -2056,7 +2056,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1204782555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.21, y: 0.36, z: -9.822697}
+  m_LocalPosition: {x: 9.21, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 119737638}
