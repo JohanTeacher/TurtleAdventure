@@ -16,11 +16,16 @@ public class FrogAI : MonoBehaviour {
 	GameObject frogBody;
 	Animator animator;
 
+    Collider2D area; //Area that the constraints the frogs movement
+    Collider2D frogCollider;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		frogBody = transform.Find("frogBody").gameObject;
 		animator = GetComponent<Animator> ();
+
+        area = transform.parent.GetComponent<Collider2D>();
 
 		timePassed = 0.0f;
 		howLongToMoveOrStay = Random.Range(randomMin,randomMax);
@@ -64,6 +69,14 @@ public class FrogAI : MonoBehaviour {
 			animator.SetBool("walking",false);
 
 		}
+
+        //check the constraints of the area
+        if (!frogCollider.IsTouching(area))
+        {
+            whatToDo = -whatToDo;
+        }
+
+
 
 
 	}
