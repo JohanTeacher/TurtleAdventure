@@ -26,6 +26,13 @@ public class TurtleControls : MonoBehaviour {
 	Transform mageTransform;
 	Animator animator;
 	Collider2D feetCollider;
+    AudioSource audioSource;
+
+    public AudioClip death;
+    public AudioClip jump;
+    public AudioClip doubleJump;
+    public AudioClip hurt;
+    public AudioClip saveSound;
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +50,8 @@ public class TurtleControls : MonoBehaviour {
 
 		animator = GetComponent<Animator> ();
 
+        audioSource = GetComponent<AudioSource>();
+
 		uiScript.SetLifeSigns (lives);
 
 		feetCollider = transform.Find ("FeetCollision").gameObject.GetComponent<Collider2D> ();
@@ -50,7 +59,7 @@ public class TurtleControls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        
 		Collider2D[] contactcolliders = new Collider2D[5];
 		int contactcolliderSize = feetCollider.GetContacts (contactcolliders);
 		grounded = false;
@@ -63,8 +72,7 @@ public class TurtleControls : MonoBehaviour {
 				animator.SetBool ("grounded", true);
 				break;
 			}
-		}
-			
+		}	
 
 		//First set animation-state to idle
 		animator.SetBool ("walking", false);
@@ -85,10 +93,13 @@ public class TurtleControls : MonoBehaviour {
 
 			if(JumpCount < MaximumJumps)
 			{
-				JumpCount++;
+                
+                JumpCount++;
 				rb.velocity = new Vector2 (rb.velocity.x, 0);
 				rb.AddForce (new Vector2 (0, JumpForce));
 				animator.SetTrigger("JumpStart");
+                if (JumpCount == 1) audioSource.PlayOneShot(jump);
+                else audioSource.PlayOneShot(doubleJump);
 			}
 		}
 
@@ -108,6 +119,7 @@ public class TurtleControls : MonoBehaviour {
 			uiScript.DeleteALifeSign ();
 
 			animator.SetTrigger ("hurt");
+            audioSource.PlayOneShot(hurt);
 
 			print ("Ouch!!"+ lives + " lives to go.");
 
@@ -130,14 +142,19 @@ public class TurtleControls : MonoBehaviour {
 		{
 			print ("Saving");
 			lastSavedPosition = other.gameObject.transform.position + new Vector3(0,0.5f,0);
+            audioSource.PlayOneShot(saveSound);
 		}
+        else if (other.gameObject.name == "Beach")
+        {
+            SceneManager.LoadScene("credits", LoadSceneMode.Single);
+        }
 	}
 
 	IEnumerator Kill()
 	{
 		for (int i = 0; i < 2; i++) {
 			if (i >= 1) {
-				Die ();
+                Die();
 			}
 			yield return new WaitForSeconds (0.5f);
 		}
@@ -154,6 +171,7 @@ public class TurtleControls : MonoBehaviour {
 		lives = LivesMaximum;
 		uiScript.SetLifeSigns (lives);
 		print ("Died!!!");
+        audioSource.PlayOneShot(death);
 
 	}
 }
