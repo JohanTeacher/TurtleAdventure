@@ -26,6 +26,7 @@ public class FrogAI : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 
         area = transform.parent.GetComponent<Collider2D>();
+        frogCollider = GetComponent<Collider2D>();
 
 		timePassed = 0.0f;
 		howLongToMoveOrStay = Random.Range(randomMin,randomMax);
@@ -51,6 +52,12 @@ public class FrogAI : MonoBehaviour {
 			timePassed = 0;
 		}
 
+        //check the constraints of the area
+        if (!frogCollider.IsTouching(area))
+        {
+            whatToDo = -whatToDo;
+        }
+
 		//Do the decided action
 		if (whatToDo == -1) {
 			//Frog is hoping to the left
@@ -70,11 +77,7 @@ public class FrogAI : MonoBehaviour {
 
 		}
 
-        //check the constraints of the area
-        if (!frogCollider.IsTouching(area))
-        {
-            whatToDo = -whatToDo;
-        }
+       
 
 
 

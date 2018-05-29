@@ -1,7 +1,14 @@
 ﻿<Properties StartupConfiguration="{41E7CC27-E109-7669-EAB6-8E90D08FC5BE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/whileloop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TurtleControls.cs">
     <Files>
+      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/Bollcontroll.cs" Line="1" Column="1" />
+      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/bubblesort.cs" Line="24" Column="21" />
+      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/datatyper.cs" Line="1" Column="1" />
+      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/forloop.cs" Line="15" Column="3" />
+      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/LinearSearch.cs" Line="41" Column="4" />
+      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/minarray.cs" Line="1" Column="1" />
+      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/whileloop.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SpinnerAI.cs" Line="53" Column="42" />
       <File FileName="Assets/Scripts/startControll.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TurtleControls.cs" Line="145" Column="47" />
@@ -11,13 +18,6 @@
       <File FileName="Assets/Scripts/SavePoint.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TreesControll.cs" Line="19" Column="1" />
       <File FileName="Assets/Scripts/Credits.cs" Line="28" Column="1" />
-      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/Bollcontroll.cs" Line="1" Column="1" />
-      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/bubblesort.cs" Line="1" Column="1" />
-      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/datatyper.cs" Line="1" Column="1" />
-      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/forloop.cs" Line="1" Column="1" />
-      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/LinearSearch.cs" Line="1" Column="1" />
-      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/minarray.cs" Line="1" Column="1" />
-      <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/whileloop.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

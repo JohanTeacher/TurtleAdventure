@@ -20,6 +20,8 @@ public class TurtleControls : MonoBehaviour {
 
 	public UIScript uiScript; //User Interface controll
 
+
+
 	Vector3 lastSavedPosition;
 
 	Rigidbody2D rb;
@@ -34,12 +36,18 @@ public class TurtleControls : MonoBehaviour {
     public AudioClip hurt;
     public AudioClip saveSound;
 
+    bool gameIsPaused;
+    public GameObject pauseScreen;
+
 	// Use this for initialization
 	void Start () {
 
 		JumpCount = 0;
 
 		lives = LivesMaximum;
+
+        gameIsPaused = false;
+        Time.timeScale = 1;
 
 		lastSavedPosition = transform.position;
 
@@ -103,6 +111,29 @@ public class TurtleControls : MonoBehaviour {
 			}
 		}
 
+        if (Input.GetKeyDown("escape"))
+        {
+            if(gameIsPaused)
+            {
+                gameIsPaused = false;
+                Time.timeScale = 1;
+                pauseScreen.SetActive(false);
+            }
+            else
+            {
+                gameIsPaused = true;
+                Time.timeScale = 0;
+                pauseScreen.SetActive(true);
+            }
+        }
+        if (Input.GetKeyDown("r") && gameIsPaused)
+        {
+            SceneManager.LoadScene("start", LoadSceneMode.Single);
+        }
+        if (Input.GetKeyDown("q") && gameIsPaused)
+        {
+            Application.Quit();
+        }
 
 		//Check Y position to see if Bobby dies
 		if (transform.position.y <= killHeight) {
