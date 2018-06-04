@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{41E7CC27-E109-7669-EAB6-8E90D08FC5BE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TurtleControls.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Credits.cs">
     <Files>
       <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/Bollcontroll.cs" Line="1" Column="1" />
       <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/bubblesort.cs" Line="24" Column="21" />
@@ -11,13 +11,13 @@
       <File FileName="../../../Dropbox/DATA/Jobb/FRYSHUSET/2017-2018/Prog 1 17NA/Eyob/whileloop.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SpinnerAI.cs" Line="53" Column="42" />
       <File FileName="Assets/Scripts/startControll.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/TurtleControls.cs" Line="145" Column="47" />
-      <File FileName="Assets/Scripts/FrogAI.cs" Line="74" Column="1" />
+      <File FileName="Assets/Scripts/TurtleControls.cs" Line="50" Column="28" />
+      <File FileName="Assets/Scripts/FrogAI.cs" Line="59" Column="10" />
       <File FileName="Assets/Scripts/UIScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/feetCollisionCheck.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SavePoint.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TreesControll.cs" Line="19" Column="1" />
-      <File FileName="Assets/Scripts/Credits.cs" Line="28" Column="1" />
+      <File FileName="Assets/Scripts/Credits.cs" Line="12" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
